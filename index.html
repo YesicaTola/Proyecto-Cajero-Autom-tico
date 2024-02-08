@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Cajero Automático</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center">BANCO DE LA FORTUNA</h2>
+        <div class="card">
+            <div id="login-area" class="text-center">
+                <h4>Bienvenido(a) a tu cajero</h4>
+                <hr>
+
+                <input type="text" id="username" class="form-control mb-2" placeholder="Usuario" required>
+                <input type="password" id="password" class="form-control mb-2" placeholder="Contraseña" required>
+                <button id="login-btn" class="btn btn-primary" onclick="login()">Ingresar</button>
+                <hr>
+                <span>¿No recuerdas tu contraseña?
+                    <a href="#">Haz click aquí</a>
+                </span>
+            </div>
+
+            <div id="atm-area" class="text-center d-none">
+                <h4 id="welcome-message"></h4>
+                <img id="profile-picture" src="https://www.pngall.com/wp-content/uploads/5/Profile-PNG-Clipart.png" alt="Foto de perfil">
+                <div id="balance-display" class="my-3"></div>
+                
+                <span>¿Qué deseas realizar hoy?</span>
+                <hr>
+                <div class="options-btn">
+                    <button id="show-deposit-section-btn" class="btn btn-info" onclick="showDepositSection()">Depositar</button>
+                    <button id="show-withdraw-section-btn" class="btn btn-info" onclick="showWithdrawSection()">Retirar</button>
+                </div>
+                <div id="deposit-section" class="my-3 d-none">
+                    <hr>
+                    <label for="deposit-amount">Ingresar monto a depositar:</label>
+                    <input type="number" id="deposit-amount" class="form-control mb-2">
+                    <button class="btn btn-success" id="deposit-btn"  onclick="deposit()">Depositar</button>
+                </div>
+                <div id="withdraw-section" class="my-3 d-none">
+                    <hr>
+                    <label for="withdraw-amount">Ingresar monto a retirar:</label>
+                    <input type="number" id="withdraw-amount" class="form-control mb-2">
+                    <button class="btn btn-warning" id="withdraw-btn" onclick="withdraw()">Retirar</button>
+                </div>
+                <!-- ventana del saldo -->
+                <div id="saldo-modal" class="modal">
+                    <div class="modal-content">
+                      <span class="close" onclick="closeModal()">&times;</span>
+                      <img id="Saldo-ekeko" src="https://www.amaruemprende.com/wp-content/uploads/2021/10/ekeko-sin-letra-y-sin-fondo-1024x1024.png" alt="Imagen ekeko">
+                      <p id="saldo-info"></p>
+                      <div id="transaction-history" class="my-3"></div>
+                    </div>
+                </div>
+                <hr>
+                <button id="showBalance-btn" class="btn btn-info" onclick="showBalance()">Consultar Saldo</button>
+                <button id="logout-btn" class="btn btn-danger my-2" onclick="logout()">Salir</button>
+            </div>
+        </div>
+    </div>
+    <img src="https://2.bp.blogspot.com/-OxUXMA8MgY0/Te5sqD-z47I/AAAAAAAAAF4/6d1rSiiQph0/s200/amuletos_ekeko.png" alt="ekeko" id="ekeko">
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <footer>
+        <p class="text-center text-muted small">&copy; 2024 - Proyecto Cajero Automático</p>
+    </footer>
+</body>
+
+</html>
